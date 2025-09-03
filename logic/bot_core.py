@@ -1,17 +1,21 @@
+import re
+
 def get_bot_response(user_input):
-    user_input = user_input.lower().strip()
+    # Normalize input: lowercase and remove punctuation
+    user_input = user_input.lower()
+    user_input = re.sub(r'[^\w\s]', '', user_input)
 
     if "miss" in user_input:
         return "Absence acknowledged."
     elif "love" in user_input:
         return "Statement received."
-    elif "beautiful" in user_input or "cute" in user_input or "sweet" in user_input:
+    elif any(word in user_input for word in ["beautiful", "cute", "sweet"]):
         return "Observation noted."
     elif "care" in user_input:
         return "Define 'care'."
     elif "mine" in user_input:
         return "Possession is a social construct."
-    elif "hello" in user_input or "hi" in user_input:
+    elif any(word in user_input for word in ["hello", "hi"]):
         return "Hi."
     elif "good night" in user_input:
         return "Night."
