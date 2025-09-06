@@ -1,9 +1,15 @@
+/* Gradient Background */
+body {
+  background: linear-gradient(to bottom, #ffe6f0, #1a1a2e);
+  font-family: 'Courier New', monospace;
+}
+
 /* Rainbow Cursor */
 body, input, textarea {
   cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur114.cur'), auto;
 }
 
-/* Falling Hearts Animation */
+/* Floating Hearts Animation */
 @keyframes fall {
   0% { top: -10px; opacity: 1; }
   100% { top: 100vh; opacity: 0; }
@@ -12,24 +18,49 @@ body, input, textarea {
 .heart {
   position: fixed;
   top: -10px;
-  font-size: 20px;
+  font-size: 24px;
   color: #ff69b4;
-  animation: fall 5s linear infinite;
+  animation: fall 6s linear infinite;
   pointer-events: none;
   z-index: 9999;
+  left: calc(10% + 80% * var(--random-x));
+  animation-delay: calc(1s * var(--random-delay));
+}
+
+/* Input Field Styling */
+input[type="text"] {
+  border: none;
+  border-bottom: 2px solid #ff69b4;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  padding: 8px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #ff1493;
 }
 
 /* Bot Reply Styling */
 .bot-reply {
-  background-color: #f5f5f5;
+  animation: fadeIn 1s ease-in;
+  background-color: rgba(255, 255, 255, 0.1);
   padding: 12px;
   border-radius: 8px;
   margin-top: 10px;
   font-style: italic;
-  color: #444;
+  color: #fff;
 }
 
-/* Centered Title */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Title Styling */
 h1 {
   font-family: 'Courier New', monospace;
   color: #ff69b4;
