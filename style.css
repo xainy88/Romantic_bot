@@ -1,5 +1,5 @@
-/* Gradient Background */
-body {
+/* Apply gradient to Streamlit's main container */
+[data-testid="stAppViewContainer"] {
   background: linear-gradient(to bottom, #ffe6f0, #1a1a2e);
   font-family: 'Courier New', monospace;
 }
