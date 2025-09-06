@@ -5,8 +5,23 @@ import json
 # Page config
 st.set_page_config(page_title="WhisperBot", layout="centered")
 
-# Inject custom CSS
-with open("style.css") as f:
+# Inject gradient background directly
+gradient_html = """
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.stApp {
+  background: linear-gradient(to bottom, #ffe6f0, #1a1a2e);
+}
+</style>
+"""
+st.markdown(gradient_html, unsafe_allow_html=True)
+
+# Inject custom CSS from file
+with open("style.css", "r") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # Title
