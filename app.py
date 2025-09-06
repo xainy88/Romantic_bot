@@ -12,13 +12,13 @@ with open("style.css") as f:
 # Title
 st.markdown("<h1 style='text-align: center;'>WhisperBot</h1>", unsafe_allow_html=True)
 
-# Falling hearts HTML
+# Floating hearts HTML
 hearts_html = """
-<div class="heart" style="left: 10%; animation-delay: 0s;">💖</div>
-<div class="heart" style="left: 30%; animation-delay: 1s;">💖</div>
-<div class="heart" style="left: 50%; animation-delay: 2s;">💖</div>
-<div class="heart" style="left: 70%; animation-delay: 3s;">💖</div>
-<div class="heart" style="left: 90%; animation-delay: 4s;">💖</div>
+<div class="heart" style="--random-x: 0.1; --random-delay: 0;"></div>
+<div class="heart" style="--random-x: 0.3; --random-delay: 1;"></div>
+<div class="heart" style="--random-x: 0.5; --random-delay: 2;"></div>
+<div class="heart" style="--random-x: 0.7; --random-delay: 3;"></div>
+<div class="heart" style="--random-x: 0.9; --random-delay: 4;"></div>
 """
 components.html(hearts_html, height=0)
 
@@ -27,7 +27,7 @@ with open("responses.json", "r", encoding="utf-8") as f:
     responses = json.load(f)
 
 # Input
-user_input = st.text_input("You:", "")
+user_input = st.text_input("You:")
 
 # Response
 if user_input:
