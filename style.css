@@ -3,7 +3,7 @@ body, input, textarea {
   cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur114.cur'), auto;
 }
 
-/* Falling Hearts */
+/* Falling Hearts Animation */
 @keyframes fall {
   0% { top: -10px; opacity: 1; }
   100% { top: 100vh; opacity: 0; }
