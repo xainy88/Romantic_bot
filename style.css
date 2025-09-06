@@ -1,0 +1,37 @@
+/* Rainbow Cursor */
+body, input, textarea {
+  cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur114.cur'), auto;
+}
+
+/* Falling Hearts */
+@keyframes fall {
+  0% { top: -10px; opacity: 1; }
+  100% { top: 100vh; opacity: 0; }
+}
+
+.heart {
+  position: fixed;
+  top: -10px;
+  font-size: 20px;
+  color: #ff69b4;
+  animation: fall 5s linear infinite;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Bot Reply Styling */
+.bot-reply {
+  background-color: #f5f5f5;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-style: italic;
+  color: #444;
+}
+
+/* Centered Title */
+h1 {
+  font-family: 'Courier New', monospace;
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
